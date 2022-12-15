@@ -7,6 +7,7 @@ import dayJs from 'dayjs'
 import Loading from '../../components/Loading'
 import ModalDelete from '../../components/Modal/ModalDelete'
 import ModalInformation from '../../components/Modal/ModalInformation'
+import ModalAddList from '../../components/Modal/ModalAddList'
 
 
 const Dashboard = () => {
@@ -46,7 +47,7 @@ const Dashboard = () => {
                     )}
                 </div>
             }
-            {showModal ? <ModalInformation text='activity' /> : null}
+            {showModal ? <ModalAddList /> : null}
         </>
 
 
