@@ -90,22 +90,21 @@ const ModalAddList = ({ handleCancel, handleSave, isEdit, dataDetail }) => {
                   onChange={(e) => handleValue(e)}
                   name="priority"
                   value={data?.priority}
-                  data-cy="modal-add-priority-item"
                 >
-                  <option value="very-high">
+                  <option value="very-high" data-cy="modal-add-priority-item">
                     <span className="bg-danger w-[14px] h-[14px]"></span>Very
                     High
                   </option>
-                  <option value="high">
+                  <option value="high" data-cy="modal-add-priority-item">
                     <span className="bg-danger w-[14px] h-[14px]"></span>High
                   </option>
-                  <option value="medium">
+                  <option value="medium" data-cy="modal-add-priority-item">
                     <span className="bg-danger w-[14px] h-[14px]"></span>Medium
                   </option>
-                  <option value="low">
+                  <option value="low" data-cy="modal-add-priority-item">
                     <span className="bg-danger w-[14px] h-[14px]"></span>Low
                   </option>
-                  <option value="very-low">
+                  <option value="very-low" data-cy="modal-add-priority-item">
                     createItemTodo(data)
                     <span className="bg-danger w-[14px] h-[14px]"></span>Very
                     Low
