@@ -13,10 +13,12 @@ export default function Card({ handleClickDelete, activity }) {
                 data-cy='activity-item'
                 className='activity-card bg-white rounded-xl  h-[234px]'
             >
-                <div onClick={() => navigate(`/detail/${activity?.id}`)} className='activity-body h-[158px]'>
-                    <h4 data-cy='activity-item-title' className='activity-item-tittle text-lg cursor-pointer font-bold'>
-                        {activity?.title}
-                    </h4>
+                <div
+                    data-cy='activity-item-title'
+                    onClick={() => navigate(`/detail/${activity?.id}`)}
+                    className='activity-body h-[158px]'
+                >
+                    <h4 className='activity-item-tittle text-lg cursor-pointer font-bold'>{activity?.title}</h4>
                 </div>
                 <div className='flex items-center justify-between'>
                     <span data-cy='activity-item-date' className='text-base text-[#888]'>
