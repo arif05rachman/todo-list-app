@@ -81,7 +81,7 @@ export default function Detail() {
               <Button
                 onClick={() => setAddModal(true)}
                 dataCy="todo-add-button"
-                text={"Tambah"}
+                text="Tambah"
               />
             </div>
           </div>
