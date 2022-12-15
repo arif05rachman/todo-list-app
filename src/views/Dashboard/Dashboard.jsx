@@ -36,7 +36,7 @@ const Dashboard = () => {
                         <h1 data-cy='activity-title' className='text-4xl font-bold'>
                             Activity
                         </h1>
-                        <Button dataCy={"activity-add-button"} text={"Tambah"} onClick={createActivity} />
+                        <Button dataCy='activity-add-button' text='Tambah' onClick={createActivity} />
                     </div>
                     {activities?.length ? (
                         <div className='dasboard-content w-full'>
@@ -65,17 +65,25 @@ const Dashboard = () => {
                     )}
                 </div>
             )}
-            {showModal && (
-                <ModalDelete
-                    actionCancelDelete={handleCancelDelete}
-                    actionDelete={deleteActivity}
-                    text='activity'
-                    activity={activity}
-                />
-            )}
-            {modalInfo && (
-                <ModalInformation modalInfo={modalInfo} setModalInfo={setModalInfo} text='activity berhasil dihapus' />
-            )}
+            <div data-cy='modal-delete'>
+                {showModal && (
+                    <ModalDelete
+                        actionCancelDelete={handleCancelDelete}
+                        actionDelete={deleteActivity}
+                        text='activity'
+                        activity={activity}
+                    />
+                )}
+            </div>
+            <div data-cy='modal-information'>
+                {modalInfo && (
+                    <ModalInformation
+                        modalInfo={modalInfo}
+                        setModalInfo={setModalInfo}
+                        text='activity berhasil dihapus'
+                    />
+                )}
+            </div>
         </>
     )
 }
