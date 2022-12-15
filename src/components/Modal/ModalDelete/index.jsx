@@ -5,6 +5,7 @@ const ModalDelete = ({ activity, text, actionDelete, actionCancelDelete }) => {
     return (
         <>
             <div
+                onClick={actionCancelDelete}
                 data-cy='todo-modal-delete'
                 className='justify-center items-center flex overflow-hidden fixed inset-0 z-50 outline-none focus:outline-none'
             >
@@ -36,8 +37,8 @@ const ModalDelete = ({ activity, text, actionDelete, actionCancelDelete }) => {
                                 Batal
                             </button>
                             <button
-                                data-cy='activity-item-delete-button'
-                                // data-cy='modal-delete-confirm-button'
+                                // data-cy='activity-item-delete-button'
+                                data-cy='modal-delete-confirm-button'
                                 style={{ padding: "13px 14px", borderRadius: "45px", width: "150px", height: "54px" }}
                                 className='bg-danger text-white font-semibold text-lg shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150'
                                 type='button'
