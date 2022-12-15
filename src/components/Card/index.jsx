@@ -15,7 +15,7 @@ export default function Card({ title, handleClickDelete, getDetailActivity, date
                         {title}
                     </h4>
                 </div>
-                <div className='card-footer flex items-center justify-between'>
+                <div className='flex items-center justify-between'>
                     <span data-cy='activity-item-date' className='text-base text-[#888]'>
                         {date}
                     </span>
