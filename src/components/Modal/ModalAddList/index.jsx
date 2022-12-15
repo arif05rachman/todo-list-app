@@ -90,6 +90,7 @@ const ModalAddList = ({ handleCancel, handleSave, isEdit, dataDetail }) => {
                   onChange={(e) => handleValue(e)}
                   name="priority"
                   value={data?.priority}
+                  data-cy="modal-add-priority-dropdown"
                 >
                   <option value="very-high">
                     <span className="bg-danger w-[14px] h-[14px]"></span>Very
@@ -119,6 +120,7 @@ const ModalAddList = ({ handleCancel, handleSave, isEdit, dataDetail }) => {
                 className="bg-emerald-500 text-lg text-white font-bold text-center rounded shadow hover:shadow-lg outline-none focus:outline-none ease-linear transition-all duration-150"
                 type="button"
                 onClick={() => handleSave({ ...data, idTodo: dataDetail?.id })}
+                data-cy="modal-add-save-button"
               >
                 Simpan
               </button>
