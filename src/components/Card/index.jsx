@@ -7,10 +7,9 @@ export default function Card({ handleClickDelete, activity }) {
     const navigate = useNavigate()
 
     return (
-        <div style={{ flex: "0 0 auto" }} className='w-full max-w-[235px]'>
+        <div style={{ flex: "0 0 auto" }} data-cy='activity-item' className='w-full max-w-[235px]'>
             <div
                 style={{ padding: "22px 27px", boxShadow: "0 4px 8px rgb(0 0 0 / 15%)" }}
-                data-cy='activity-item'
                 className='activity-card bg-white rounded-xl  h-[234px]'
             >
                 <div

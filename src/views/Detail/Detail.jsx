@@ -48,11 +48,17 @@ export default function Detail() {
                 <div className='container '>
                     <div style={{ margin: "43px 0 55px" }} className='flex flex-row justify-between'>
                         <div className='flex items-center'>
-                            <RiArrowLeftSLine className='font-bold text-[32px] mr-5 cursor-pointer' />
-                            <h2 data-cy='activity-title' className='text-4xl font-bold'>
+                            <RiArrowLeftSLine
+                                data-cy='todo-back-button'
+                                className='font-bold text-[32px] mr-5 cursor-pointer'
+                            />
+                            <h2 data-cy='todo-title' className='text-4xl font-bold'>
                                 {details?.title}
                             </h2>
-                            <TbPencil className='cursor-pointer ml-[27px] text-2xl text-[#888]' />
+                            <TbPencil
+                                data-cy='todo-title-edit-button'
+                                className='cursor-pointer ml-[27px] text-2xl text-[#888]'
+                            />
                         </div>
                         <div className='flex items-center'>
                             <button
@@ -66,7 +72,7 @@ export default function Detail() {
                                     className='cursor-pointer text-2xl text-[#888] inline-block'
                                 />
                             </button>
-                            <Button onClick={() => setAddModal(true)} dataCy='activity-add-button' text={"Tambah"} />
+                            <Button onClick={() => setAddModal(true)} dataCy='todo-add-button' text={"Tambah"} />
                         </div>
                     </div>
                     <div className='detail-content'>

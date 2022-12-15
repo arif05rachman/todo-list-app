@@ -2,7 +2,7 @@ import React from "react"
 import informationIcon from "../../../assets/image/information-icon.svg"
 
 const ModalInformation = ({ text, modalInfo, setModalInfo }) => {
-    setTimeout(() => setModalInfo(false), 1500)
+    setTimeout(() => setModalInfo(false), 500)
     // if (modalInfo) timeOut()
 
     return (
