@@ -90,6 +90,7 @@ const ModalAddList = ({ handleCancel, handleSave, isEdit, dataDetail }) => {
                   onChange={(e) => handleValue(e)}
                   name="priority"
                   value={data?.priority}
+                  data-cy="modal-add-priority-item"
                 >
                   <option value="very-high">
                     <span className="bg-danger w-[14px] h-[14px]"></span>Very
