@@ -1,10 +1,12 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Button from '../../components/Button'
 import Card from '../../components/Card'
 import emptyDashboardImage from '../../assets/image/activity-empty-state.svg'
 import useDashboard from './useDashboard'
 import dayJs from 'dayjs'
 import Loading from '../../components/Loading'
+import ModalDelete from '../../components/Modal/ModalDelete'
+import ModalInformation from '../../components/Modal/ModalInformation'
 
 
 const Dashboard = () => {
@@ -12,6 +14,8 @@ const Dashboard = () => {
     useEffect(() => {
         getListActivity()
     }, [])
+
+    const [showModal, setShowModal] = useState(false)
 
     return (
         <>
@@ -29,7 +33,7 @@ const Dashboard = () => {
                                         <Card
                                             key={item.id}
                                             title={item.title}
-                                            // handleClickDelete={deleteActivity(item.id)}
+                                            handleClickDelete={() => setShowModal(true)}
                                             date={dayJs(item.date).format('DD MMMM YYYY')} />
                                     )
                                 })}
@@ -42,6 +46,7 @@ const Dashboard = () => {
                     )}
                 </div>
             }
+            {showModal ? <ModalInformation text='activity' /> : null}
         </>
 
 

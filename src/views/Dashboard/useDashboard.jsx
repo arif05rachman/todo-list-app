@@ -48,7 +48,11 @@ const useDashboard = () => {
     }
 
     return {
-        getListActivity, activities, isLoading, createActivity, deleteActivity
+        getListActivity,
+        activities,
+        isLoading,
+        createActivity,
+        deleteActivity
     }
 
 }
