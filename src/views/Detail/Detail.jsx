@@ -5,6 +5,7 @@ import toDoEmpty from '../../assets/image/todo-empty-state.svg'
 import { RiArrowLeftSLine } from 'react-icons/ri'
 import { TbPencil, TbArrowsDownUp } from 'react-icons/tb'
 import Dropdown from '../../components/Dropdown'
+import List from '../../components/List/List'
 
 export default function Detail() {
     const [showDropdown, setShowDropdown] = useState(false)
@@ -29,9 +30,17 @@ export default function Detail() {
                         <Button dataCy='activity-add-button' text={'Tambah'} />
                     </div>
                 </div>
-                <div className='flex items-center w-full'>
-                    <img style={{ margin: '0 auto' }} className='align-middle' src={toDoEmpty} alt='empty-dashboard-image' />
+                <div className='detail-content'>
+                    <div
+                        style={{ boxShadow: '0 4px 8px rgb(0 0 0 / 15%)' }}
+                        data-cy='todo-item'
+                        className='content-item flex justify-between mb-[10px] p-[27px] bg-white rounded-xl'>
+                        <List text={'testing'} />
+                    </div>
                 </div>
+                {/* <div className='flex items-center w-full'>
+                    <img style={{ margin: '0 auto' }} className='align-middle' src={toDoEmpty} alt='empty-dashboard-image' />
+                </div> */}
             </div>
             {showDropdown ? <Dropdown /> : null}
 

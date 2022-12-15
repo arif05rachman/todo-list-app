@@ -1,7 +1,7 @@
-import { useState } from 'react'
 import Navbar from './components/Navbar'
 import Dashboard from './views/Dashboard/Dashboard'
 import Detail from './views/Detail/Detail'
+import { Routes, Route } from 'react-router-dom'
 
 
 function App() {
@@ -9,8 +9,12 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <Dashboard />
-      {/* <Detail /> */}
+      <Routes>
+        {/* <Route index path='/' element={<Detail />} /> */}
+        <Route index path='/' element={<Dashboard />} />
+        <Route path='/detail/:slug' element={<Detail />} />
+      </Routes>
+
     </div>
   )
 }
