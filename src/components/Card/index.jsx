@@ -1,8 +1,11 @@
 import React from "react"
-import { HiOutlineTrash } from "react-icons/hi"
 import Trash from "../../assets/icons/trash.png"
+import { useNavigate } from "react-router-dom"
+import dayJs from "dayjs"
 
-export default function Card({ title, handleClickDelete, getDetailActivity, date }) {
+export default function Card({ handleClickDelete, activity }) {
+    const navigate = useNavigate()
+
     return (
         <div style={{ flex: "0 0 auto" }} className='w-full max-w-[235px]'>
             <div
@@ -10,14 +13,14 @@ export default function Card({ title, handleClickDelete, getDetailActivity, date
                 data-cy='activity-item'
                 className='activity-card bg-white rounded-xl  h-[234px]'
             >
-                <div onClick={getDetailActivity} className='activity-body h-[158px]'>
+                <div onClick={() => navigate(`/detail/${activity?.id}`)} className='activity-body h-[158px]'>
                     <h4 data-cy='activity-item-title' className='activity-item-tittle text-lg cursor-pointer font-bold'>
-                        {title}
+                        {activity?.title}
                     </h4>
                 </div>
                 <div className='flex items-center justify-between'>
                     <span data-cy='activity-item-date' className='text-base text-[#888]'>
-                        {date}
+                        {dayJs(activity?.date).format("DD MMMM YYYY")}
                     </span>
                     <img
                         src={Trash}

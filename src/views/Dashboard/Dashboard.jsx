@@ -3,7 +3,6 @@ import Button from "../../components/Button"
 import Card from "../../components/Card"
 import emptyDashboardImage from "../../assets/image/activity-empty-state.svg"
 import useDashboard from "./useDashboard"
-import dayJs from "dayjs"
 import Loading from "../../components/Loading"
 import ModalDelete from "../../components/Modal/ModalDelete"
 import ModalInformation from "../../components/Modal/ModalInformation"
@@ -45,9 +44,8 @@ const Dashboard = () => {
                                     return (
                                         <Card
                                             key={item.id}
-                                            title={item.title}
+                                            activity={item}
                                             handleClickDelete={() => handleDelete(item)}
-                                            date={dayJs(item.date).format("DD MMMM YYYY")}
                                         />
                                     )
                                 })}
