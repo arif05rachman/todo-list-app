@@ -3,7 +3,7 @@ import React, { useState } from "react";
 const ModalAddList = ({ handleCancel, handleSave, isEdit, dataDetail }) => {
   const [data, setData] = useState({
     title: isEdit ? dataDetail?.title : "",
-    priority: isEdit ? dataDetail?.priority : "",
+    priority: isEdit ? dataDetail?.priority : "very-high",
   });
   const handleValue = (e) => {
     setData((prev) => {
@@ -22,8 +22,6 @@ const ModalAddList = ({ handleCancel, handleSave, isEdit, dataDetail }) => {
     });
   };
 
-  console.log(dataDetail?.id);
-  console.log(data);
 
   return (
     <>
@@ -32,7 +30,6 @@ const ModalAddList = ({ handleCancel, handleSave, isEdit, dataDetail }) => {
           <div className="relative w-auto my-6 mx-auto max-w-3xl">
             <div data-cy="modal-add"></div>
             <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-[830px] bg-white outline-none focus:outline-none">
-              {/*header*/}
               <div className="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t">
                 <h4 data-cy="modal-add-title" className="text-lg font-semibold">
                   {isEdit ? `Edit List Item` : `Tambah List Item`}
@@ -47,7 +44,6 @@ const ModalAddList = ({ handleCancel, handleSave, isEdit, dataDetail }) => {
                   </span>
                 </button>
               </div>
-              {/*body*/}
               <div className="relative p-6 flex-auto">
                 <label
                   data-cy="modal-add-name-title"
@@ -90,7 +86,7 @@ const ModalAddList = ({ handleCancel, handleSave, isEdit, dataDetail }) => {
                     value={data?.priority}
                   >
                     <option value="very-high" data-cy="modal-add-priority-item">
-                      <span className="bg-danger w-[14px] h-[14px]"></span>Very
+                      <div className="bg-danger w-[14px] h-[14px]"></div>Very
                       High
                     </option>
                     <option value="high" data-cy="modal-add-priority-item">
@@ -104,14 +100,12 @@ const ModalAddList = ({ handleCancel, handleSave, isEdit, dataDetail }) => {
                       <span className="bg-danger w-[14px] h-[14px]"></span>Low
                     </option>
                     <option value="very-low" data-cy="modal-add-priority-item">
-                      createItemTodo(data)
                       <span className="bg-danger w-[14px] h-[14px]"></span>Very
                       Low
                     </option>
                   </select>
                 </div>
               </div>
-              {/*footer*/}
               <div className="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">
                 <button
                   style={{
